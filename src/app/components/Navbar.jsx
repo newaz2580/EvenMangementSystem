@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";   // ✅ Fixed import
+import { Menu, X } from "lucide-react";  
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -71,9 +72,9 @@ export default function Navbar() {
                 Contact
               </a>
               <div className="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
-                <Button variant="outline" className="w-full">
-                  Login
-                </Button>
+               <Button variant="outline" className="w-full" asChild>
+      <Link href="/login">Login</Link>
+    </Button>
                 <Button className="w-full">Sign Out</Button>
               </div>
             </div>
